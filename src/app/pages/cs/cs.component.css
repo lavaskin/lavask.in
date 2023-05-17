@@ -5,6 +5,7 @@
 }
 
 .page {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -47,6 +48,18 @@ a {
 	text-transform: lowercase;
 }
 
+.tenechi {
+	width: 2.5rem;
+	height: 2.5rem;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.tenechi:hover {
+	background-image: url('../../../assets/tenechiUhh.png');
+	background-size: cover;
+}
+
 @media screen and (min-width: 768px) {
 	a:focus, a:hover {
 		width: 100%;
@@ -73,7 +86,6 @@ a {
 		border-radius: 4rem 0 4rem 0;
 	}
 }
-
 @keyframes flowing-border-opposite {
 	0% {
 		border-radius: 0 4rem 0 4rem;
