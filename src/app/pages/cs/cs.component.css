@@ -1,0 +1,48 @@
+* {
+	/* Variables */
+	--bg-color: #090909;
+	--text-color: #fdfdfd;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100dvh;
+	background-color: #090909;
+}
+
+h1 {
+	font-weight: 700;
+	margin-bottom: 3rem;
+	color: var(--text-color);
+}
+
+.links {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	width: 100%; /* so the a's can expand fully */
+}
+
+a {
+	display: flex;
+	justify-content: center;
+	padding: 0.5rem;
+	width: 10rem;
+	transition: 0.1s;
+	background-color: var(--text-color);
+	color: var(--bg-color);
+	border-radius: 2rem 0 2rem 0;
+}
+
+@media screen and (min-width: 768px) {
+	a:hover {
+		width: 100%;
+		font-weight: 700;
+		border-radius: 0 0 0 0;
+	}
+	
+}

@@ -1,4 +1,4 @@
-# Lavaskin
+# [lavask.in](https://lavask.in)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
 
@@ -8,7 +8,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To make a new page, use `ng g c pages/name`.
+
+To make a new generic component, use `ng g c components/name`.
 
 ## Build
 

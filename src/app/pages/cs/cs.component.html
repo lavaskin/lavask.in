@@ -1,0 +1,9 @@
+<div class="page">
+	<h1>lavask.in/cs</h1>
+
+	<div class="links">
+		<a *ngFor="let link of links" [href]="link.href" target="_blank">
+			{{link.title}}
+		</a>
+	</div>
+</div>
