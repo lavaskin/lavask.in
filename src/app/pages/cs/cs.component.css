@@ -27,15 +27,24 @@ h1 {
 	width: 100%; /* so the a's can expand fully */
 }
 
+a:nth-child(even) {
+	animation: flowing-border 3s ease-in-out infinite;
+}
+
+a:nth-child(odd) {
+	animation: flowing-border-opposite 3s ease-in-out infinite;
+}
+
+
 a {
 	display: flex;
 	justify-content: center;
 	padding: 0.5rem;
-	width: 10rem;
+	width: 12rem;
 	transition: 0.1s;
 	background-color: var(--text-color);
 	color: var(--bg-color);
-	border-radius: 2rem 0 2rem 0;
+	text-transform: lowercase;
 }
 
 @media screen and (min-width: 768px) {
@@ -43,6 +52,37 @@ a {
 		width: 100%;
 		font-weight: 700;
 		border-radius: 0 0 0 0;
+		animation: none;
+		padding: 1rem;
+		color: var(--text-color);
+		outline: var(--text-color) 0.2rem solid;
 	}
-	
+}
+
+@keyframes flowing-border {
+	0% {
+		border-radius: 4rem 0 4rem 0;
+	}
+
+	50% {
+		border-radius: 0 4rem 0 4rem;
+	}
+
+	100% {
+		border-radius: 4rem 0 4rem 0;
+	}
+}
+
+@keyframes flowing-border-opposite {
+	0% {
+		border-radius: 0 4rem 0 4rem;
+	}
+
+	50% {
+		border-radius: 4rem 0 4rem 0;
+	}
+
+	100% {
+		border-radius: 0 4rem 0 4rem;
+	}
 }
