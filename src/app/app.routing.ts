@@ -4,9 +4,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { CsComponent } from './pages/cs/cs.component';
 
 const routes: Routes = [
-	{ path: 'home', component: HomeComponent },
+	{ path: '', component: HomeComponent },
 	{ path: 'cs', component: CsComponent },
-	{ path: '**', redirectTo: '/home' },
+	{ path: '**', redirectTo: '' },
 ];
 
 @NgModule({
