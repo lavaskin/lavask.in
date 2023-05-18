@@ -8,13 +8,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { CsComponent } from './pages/cs/cs.component';
 
 // Components
-// ...
+import { TitleComponent } from './components/title/title.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CsComponent
+    CsComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,
