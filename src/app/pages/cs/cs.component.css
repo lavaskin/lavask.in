@@ -46,6 +46,9 @@ a {
 	background-color: var(--text-color);
 	color: var(--bg-color);
 	text-transform: lowercase;
+
+	/* for trailing lines bug in chrome */
+	-webkit-transform: translate3d(0,0,0);
 }
 
 .tenechi {
