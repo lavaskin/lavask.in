@@ -7,7 +7,7 @@ import { Link } from 'src/app/models/link.model';
 	styleUrls: ['./cs.component.css']
 })
 export class CsComponent implements OnInit {
-	public title: string = 'lavask.in/cs';
+	public title: string = 'lavask.in';
 	public links: Link[] = [
 		{ title: 'steam', href: 'https://steamcommunity.com/profiles/76561198121030123', color: '#171a21', },
 		{ title: 'trade', href: 'https://steamcommunity.com/tradeoffer/new/?partner=160764395&token=vwcpkFVk', color: '#1d5676' },
@@ -23,7 +23,7 @@ export class CsComponent implements OnInit {
 
 	public tenechi(): void {
 		// Change all the info to tenechi stuff
-		this.title = '♔tenec.hi/cs';
+		this.title = '♔tenec.hi';
 		this.links = [
 			{ title: 'steam', href: 'https://steamcommunity.com/profiles/76561198301309560/', color: '#171a21', },
 			{ title: 'trade', href: 'https://steamcommunity.com/tradeoffer/new/?partner=341043832', color: '#1d5676' },
