@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
 	styleUrls: ['./title.component.css']
 })
 export class TitleComponent implements OnInit {
-	@Input() title: string = 'default title';
+	@Input() title: string = 'lavask.in';
 	@Input() addon: string = '';
 	
 	constructor() { }
