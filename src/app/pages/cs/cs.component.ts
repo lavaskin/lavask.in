@@ -21,6 +21,12 @@ export class CsComponent implements OnInit {
 
 	ngOnInit(): void { }
 
+	public refresh(): void {
+		setTimeout(() => {
+			window.location.reload();
+		});
+	}
+
 	public tenechi(): void {
 		// Change all the info to tenechi stuff
 		this.title = '♔tenec.hi';

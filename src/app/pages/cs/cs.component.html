@@ -1,4 +1,5 @@
 <div class="page">
+
 	<app-title [title]="title" addon="/cs"></app-title>
 
 	<div class="links">
@@ -6,10 +7,12 @@
 			[ngStyle]="{ 'background-color': i === hoveredIndex ? link.color : '' }"
 			(mouseenter)="hoveredIndex = i" (mouseleave)="hoveredIndex = null"
 			(focus)="hoveredIndex = i" (blur)="hoveredIndex = null"
+			(click)="refresh()"
 			target="_blank" tabindex="0">
 			{{link.title}}
 		</a>
 	</div>
 
 	<div class="tenechi" (click)="tenechi()"></div>
+
 </div>
