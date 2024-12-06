@@ -7,10 +7,8 @@
 	min-height: 100dvh;
 	background-color: #090909;
 	color: var(--text-color);
-}
-
-app-title {
-	margin-bottom: 2rem;
+	gap: 2rem;
+	padding: 2rem;
 }
 
 .links {
@@ -45,16 +43,10 @@ a {
 	-webkit-transform: translate3d(0,0,0);
 }
 
-.tenechi {
-	width: 2.5rem;
-	height: 2.5rem;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-}
-.tenechi:hover {
-	background-image: url('/assets/tenechiUhh.png');
-	background-size: cover;
+img {
+	width: 100%;
+	max-width: 60rem;
+	height: auto;
 }
 
 @media screen and (min-width: 768px) {
