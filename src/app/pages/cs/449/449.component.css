@@ -7,10 +7,8 @@
 	min-height: 100dvh;
 	background-color: #090909;
 	color: var(--text-color);
-}
-
-app-title {
-	margin-bottom: 2rem;
+	gap: 2rem;
+	padding: 2rem;
 }
 
 .links {
@@ -43,6 +41,12 @@ a {
 
 	/* for trailing lines bug in chrome */
 	-webkit-transform: translate3d(0,0,0);
+}
+
+img {
+	width: 100%;
+	max-width: 60rem;
+	height: auto;
 }
 
 @media screen and (min-width: 768px) {
