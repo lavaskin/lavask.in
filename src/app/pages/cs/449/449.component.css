@@ -45,18 +45,6 @@ a {
 	-webkit-transform: translate3d(0,0,0);
 }
 
-.tenechi {
-	width: 2.5rem;
-	height: 2.5rem;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-}
-.tenechi:hover {
-	background-image: url('../../../assets/tenechiUhh.png');
-	background-size: cover;
-}
-
 @media screen and (min-width: 768px) {
 	a:focus, a:hover {
 		width: 100%;
