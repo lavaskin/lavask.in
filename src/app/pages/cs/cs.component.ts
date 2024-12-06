@@ -8,6 +8,7 @@ import { Link } from 'src/app/models/link.model';
 })
 export class CsComponent implements OnInit {
 	public title: string = 'lavask.in';
+
 	public links: Link[] = [
 		{ title: 'steam', href: 'https://steamcommunity.com/profiles/76561198121030123', color: '#171a21', },
 		{ title: 'trade', href: 'https://steamcommunity.com/tradeoffer/new/?partner=160764395&token=vwcpkFVk', color: '#1d5676' },
@@ -15,9 +16,9 @@ export class CsComponent implements OnInit {
 		{ title: 'twitter', href: 'https://x.com/lavaskin_cs', color: '#1d9bf0' },
 		{ title: 'knife history', href: 'https://docs.google.com/spreadsheets/d/113Ps8U5px1545O0x1Vk62yE7RitIt0QYXLLL-IpemAQ/edit?usp=sharing', color: '#00ac47' },
 	];
+
 	public hoveredIndex: number | null = null;
-	
-	constructor() { }
+	public tenechi: boolean = false;
 
 	ngOnInit(): void { }
 
@@ -27,8 +28,9 @@ export class CsComponent implements OnInit {
 		});
 	}
 
-	public tenechi(): void {
+	public swapTenechi(): void {
 		// Change all the info to tenechi stuff
+		this.tenechi = true;
 		this.title = '♔tenec.hi';
 		this.links = [
 			{ title: 'steam', href: 'https://steamcommunity.com/profiles/76561198301309560/', color: '#171a21', },

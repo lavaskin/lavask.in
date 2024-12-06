@@ -53,7 +53,7 @@ a {
 	right: 0;
 }
 .tenechi:hover {
-	background-image: url('/assets/tenechiUhh.png');
+	background-image: url('../../../assets/tenechiUhh.png');
 	background-size: cover;
 }
 
