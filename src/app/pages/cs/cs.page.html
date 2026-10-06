@@ -1,36 +1,9 @@
-<div class="page">
-	<app-title [title]="title()" addon="/cs" />
+<main class="page">
+	<app-title addon="/cs" />
 
-	<div class="links">
-		@for (link of links(); track link.href; let i = $index) {
-			<a
-				[href]="link.href"
-				target="_blank"
-				[style.background-color]="i === hoveredIndex() ? link.color : null"
-				(mouseenter)="hoveredIndex.set(i)"
-				(mouseleave)="hoveredIndex.set(null)"
-				(focus)="hoveredIndex.set(i)"
-				(blur)="hoveredIndex.set(null)"
-				(click)="refresh()"
-			>
-				{{ link.title }}
-			</a>
+	<nav class="links" aria-label="cs links">
+		@for (link of links; track link.href) {
+			<a app-link-card [link]="link" newTab>{{ link.title }}</a>
 		}
-
-		<!--
-			No refresh() here: this one opens a page in the app, which replaces this page and its hover state.
-			Reloading would also beat the lazy 449 page to the address bar, and reload this page instead.
-		-->
-		@if (!isTenechi()) {
-			<a
-				routerLink="449"
-				(mouseenter)="hoveredIndex.set(links().length)"
-				(mouseleave)="hoveredIndex.set(null)"
-			>
-				449 skeleton
-			</a>
-		}
-	</div>
-
-	<div class="tenechi" (click)="swapTenechi()"></div>
-</div>
+	</nav>
+</main>

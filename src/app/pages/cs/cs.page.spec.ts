@@ -5,62 +5,45 @@ import { routes } from '@app/app.routes';
 import { CsPage } from './cs.page';
 
 describe('CsPage', () => {
-	let harness: RouterTestingHarness;
 	let page: HTMLElement;
 
 	beforeEach(async () => {
 		TestBed.configureTestingModule({ providers: [provideRouter(routes)] });
-		harness = await RouterTestingHarness.create();
+		const harness = await RouterTestingHarness.create();
 		await harness.navigateByUrl('/cs', CsPage);
 		page = harness.routeNativeElement!;
 	});
 
 	function links(): HTMLAnchorElement[] {
-		return Array.from(page.querySelectorAll<HTMLAnchorElement>('.links a'));
+		return Array.from(page.querySelectorAll<HTMLAnchorElement>('nav a'));
 	}
 
 	function link(label: string): HTMLAnchorElement {
 		return links().find((a) => a.textContent!.trim() === label)!;
 	}
 
-	it("links lavaskin's profiles, then the 449 skeleton page", () => {
+	it("links lavaskin's profiles", () => {
 		expect(links().map((a) => a.textContent!.trim())).toEqual([
 			'steam',
 			'trade',
 			'cashrep',
 			'twitter',
 			'knife history',
-			'449 skeleton',
 		]);
 		expect(link('steam').href).toBe('https://steamcommunity.com/profiles/76561198121030123');
-		expect(link('steam').target).toBe('_blank');
-		expect(link('449 skeleton').getAttribute('href')).toBe('/cs/449');
 	});
 
-	it('colors only the hovered link, until the mouse leaves', async () => {
-		link('trade').dispatchEvent(new MouseEvent('mouseenter'));
-		await harness.fixture.whenStable();
-
-		expect(link('trade').style.backgroundColor).toBe('rgb(29, 86, 118)');
-		expect(link('steam').style.backgroundColor).toBe('');
-
-		link('trade').dispatchEvent(new MouseEvent('mouseleave'));
-		await harness.fixture.whenStable();
-
-		expect(link('trade').style.backgroundColor).toBe('');
+	it('opens every link in a new tab', () => {
+		for (const a of links()) {
+			expect(a.target).toBe('_blank');
+			expect(a.rel).toBe('noopener');
+		}
 	});
 
-	it("swaps to tenechi's links from the hidden corner, without the 449 skeleton", async () => {
-		page.querySelector<HTMLElement>('.tenechi')!.click();
-		await harness.fixture.whenStable();
-
-		expect(page.querySelector('h1')!.textContent).toBe('♔tenec.hi');
-		expect(links().map((a) => a.textContent!.trim())).toEqual([
-			'steam',
-			'trade',
-			'cashrep',
-			'twitter',
-		]);
-		expect(link('steam').href).toBe('https://steamcommunity.com/profiles/76561198301309560/');
+	it("hands each link its color, and text that's readable on it", () => {
+		expect(link('steam').style.getPropertyValue('--accent')).toBe('#171a21');
+		expect(link('steam').style.getPropertyValue('--accent-text')).toBe('#fdfdfd');
+		expect(link('cashrep').style.getPropertyValue('--accent')).toBe('#00d632');
+		expect(link('cashrep').style.getPropertyValue('--accent-text')).toBe('#090909');
 	});
 });

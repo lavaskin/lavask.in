@@ -1,3 +1,15 @@
-<div class="page">
+<main class="page">
 	<app-title />
-</div>
+
+	<nav class="apps" aria-label="apps">
+		@for (app of apps; track app.href) {
+			<a app-link-card [link]="app">
+				<h2>{{ app.title }}</h2>
+				<p>{{ app.description }}</p>
+				<svg class="arrow" viewBox="0 0 16 16" aria-hidden="true">
+					<path d="M4 12 12 4M5.5 4H12v6.5" />
+				</svg>
+			</a>
+		}
+	</nav>
+</main>

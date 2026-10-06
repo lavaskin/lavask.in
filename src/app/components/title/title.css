@@ -2,36 +2,22 @@ a {
 	display: flex;
 	align-items: center;
 	text-transform: lowercase;
+	outline: none;
 }
 
-a:focus {
-	outline: 0.1rem solid var(--text-color);
+a:focus-visible {
+	outline: 2px solid var(--text-color);
 	outline-offset: 0.5rem;
 }
 
 h1 {
-	background: linear-gradient(to right, red, orange, pink);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	animation: gradient-loop 5s linear infinite;
-	background-size: 200% 100%;
+	/* Letter spacing also trails the last letter, so match it on the left to stay centered */
+	padding-left: 0.5rem;
 	letter-spacing: 0.5rem;
 	font-size: 2rem;
+	font-weight: 700;
 }
 
 p {
 	font-size: 1.75rem;
-}
-
-@keyframes gradient-loop {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }
