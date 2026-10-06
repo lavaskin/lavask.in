@@ -1,0 +1,36 @@
+<div class="page">
+	<app-title addon="/cs/449" />
+
+	<div class="links">
+		@for (link of links; track link.href; let i = $index) {
+			<a
+				[href]="link.href"
+				target="_blank"
+				[style.background-color]="i === hoveredIndex() ? link.color : null"
+				(mouseenter)="hoveredIndex.set(i)"
+				(mouseleave)="hoveredIndex.set(null)"
+				(focus)="hoveredIndex.set(i)"
+				(blur)="hoveredIndex.set(null)"
+				(click)="refresh()"
+			>
+				{{ link.title }}
+			</a>
+		}
+	</div>
+
+	<!-- Both are above the fold on phones, where the second is the page's largest paint (it's 1px taller) -->
+	<img
+		ngSrc="/images/449/Screenshot_1.jpg"
+		width="1024"
+		height="566"
+		priority
+		alt="The 449 skeleton in hand, in a sunny stone corridor"
+	/>
+	<img
+		ngSrc="/images/449/Screenshot_2.jpg"
+		width="1024"
+		height="567"
+		priority
+		alt="The 449 skeleton in hand, held over a pool of water"
+	/>
+</div>

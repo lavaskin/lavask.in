@@ -7,10 +7,8 @@
 	min-height: 100dvh;
 	background-color: #090909;
 	color: var(--text-color);
-}
-
-app-title {
-	margin-bottom: 2rem;
+	gap: 2rem;
+	padding: 2rem;
 }
 
 .links {
@@ -25,10 +23,9 @@ a:nth-child(even) {
 	animation: flowing-border 3s ease-in-out infinite;
 }
 
-a:nth-child(odd) {	
+a:nth-child(odd) {
 	animation: flowing-border-opposite 3s ease-in-out infinite;
 }
-
 
 a {
 	display: flex;
@@ -42,23 +39,18 @@ a {
 	outline: none;
 
 	/* for trailing lines bug in chrome */
-	-webkit-transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0, 0, 0);
 }
 
-.tenechi {
-	width: 2.5rem;
-	height: 2.5rem;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-}
-.tenechi:hover {
-	background-image: url('/assets/tenechiUhh.png');
-	background-size: cover;
+img {
+	width: 100%;
+	max-width: 60rem;
+	height: auto;
 }
 
 @media screen and (min-width: 768px) {
-	a:focus, a:hover {
+	a:focus,
+	a:hover {
 		width: 100%;
 		font-weight: 700;
 		border-radius: 0 0 0 0;
