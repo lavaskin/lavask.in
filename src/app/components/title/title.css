@@ -1,0 +1,23 @@
+a {
+	display: flex;
+	align-items: center;
+	text-transform: lowercase;
+	outline: none;
+}
+
+a:focus-visible {
+	outline: 2px solid var(--text-color);
+	outline-offset: 0.5rem;
+}
+
+h1 {
+	/* Letter spacing also trails the last letter, so match it on the left to stay centered */
+	padding-left: 0.5rem;
+	letter-spacing: 0.5rem;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+p {
+	font-size: 1.75rem;
+}

@@ -1,17 +1,25 @@
 # [lavask.in](https://lavask.in)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+Built with [Angular](https://angular.dev) 22. Needs Node `^22.22.3`, `^24.15.0` or `>=26`.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `npm start` for a dev server, then open `http://localhost:4200/`. It reloads when source files change.
 
 ## Code scaffolding
 
-To make a new page, use `ng g c pages/name`.
+To make a new page, use `ng g c pages/name --type=page`. Add it to `src/app/app.routes.ts`.
 
 To make a new generic component, use `ng g c components/name`.
 
-## Build
+Static files (images, the favicon) go in `public/` and are served from the site root, so `public/images/foo.png` is `/images/foo.png`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Tests
+
+Run `npm test` for the [Vitest](https://vitest.dev) unit tests.
+
+## Build and deploy
+
+Run `npm run build` to build the project into `dist/browser/`.
+
+Merging into `main` deploys to Firebase Hosting through GitHub Actions. Pull requests get a preview channel.

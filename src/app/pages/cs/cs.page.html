@@ -1,0 +1,9 @@
+<main class="page">
+	<app-title addon="/cs" />
+
+	<nav class="links" aria-label="cs links">
+		@for (link of links; track link.href) {
+			<a app-link-card [link]="link" newTab>{{ link.title }}</a>
+		}
+	</nav>
+</main>

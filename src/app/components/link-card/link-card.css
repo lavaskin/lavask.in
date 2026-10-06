@@ -1,0 +1,54 @@
+:host {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding: 1.25rem 1.5rem;
+	border: 1px solid rgb(253 253 253 / 0.75);
+	/* A leaf: the page can mirror it with --corners, so neighbouring cards alternate */
+	border-radius: var(--corners, 1.5rem 0 1.5rem 0);
+	/* Frosted: the grid shows through as a soft glow */
+	background-color: rgb(9 9 9 / 0.3);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+	color: var(--text-color);
+	text-transform: lowercase;
+	outline: none;
+	transition:
+		background-color 0.15s,
+		border-color 0.15s,
+		border-radius 0.15s,
+		color 0.15s,
+		scale 0.15s;
+}
+
+/* Touch screens keep :hover after a tap, so they only get the keyboard's :focus-visible */
+@media (hover: hover) {
+	:host(:hover) {
+		border-color: var(--accent);
+		border-radius: 0;
+		background-color: var(--accent);
+		color: var(--accent-text);
+		scale: 1.03;
+	}
+}
+
+:host(:focus-visible) {
+	border-color: var(--accent);
+	border-radius: 0;
+	background-color: var(--accent);
+	color: var(--accent-text);
+	scale: 1.03;
+	outline: 2px solid var(--text-color);
+	outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:host {
+		transition: none;
+	}
+
+	:host(:hover),
+	:host(:focus-visible) {
+		scale: none;
+	}
+}
