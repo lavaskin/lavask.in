@@ -22,7 +22,7 @@ export const APPS: Link[] = [
 	{
 		title: 'mentor roulette tracker',
 		href: 'https://mentor.lavask.in/',
-		color: '#38bdf8',
+		color: '#fbbf24',
 		description:
 			'log your ffxiv mentor roulette runs and track progress toward the 2,000-clear achievement, with stats on which duties and jobs come up most',
 	},
